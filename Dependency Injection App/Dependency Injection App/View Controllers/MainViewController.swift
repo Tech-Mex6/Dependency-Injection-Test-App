@@ -37,3 +37,66 @@ class MainViewController: UITableViewController {
         return 0
     }
 }
+
+// 2 things to do
+
+// 1. set up controllers as show below
+// 2. create a JSON file with an array of `DataModel` objects (this can be helpful for testing.)
+
+// approximately this:
+
+/*
+ Main View Controller
+(with two children controllers)
+┌─────────────────────────────────────────────┐
+│                                             │
+│                                             │
+│                                             │
+│           Header View Controller            │
+│                                             │
+│    this will be simple with some labels     │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+├─────────────────────────────────────────────┤
+│                                             │
+├─────────────────────────────────────────────┤
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│       Entries View Controller               │
+│                                             │
+│      this will basically be for             │
+│      displaying the table view              │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+├─────────────────────────────────────────────┤
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+└─────────────────────────────────────────────┘
+ */
+
+class MainVC: UIViewController {
+    /// will fetch data `[DataModel]` and pass it to its children
+
+}
+
+class HeaderVC: UIViewController {
+    //var titleLabel
+    // var soemOtherLabel -- maybe some kind of summary of the entries, like count
+}
+
+class EntriesVC: UIViewController {
+
+}
+
