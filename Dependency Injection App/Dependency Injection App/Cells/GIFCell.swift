@@ -8,6 +8,7 @@
 import UIKit
 
 class GIFCell: UITableViewCell {
+    
     var cellData: DataModel?
     var GIFImageView  = UIImageView()
     var GIFTitleLabel = DITitleLabel(textAlignment: .natural, fontSize: 16)
@@ -16,6 +17,10 @@ class GIFCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(GIFImageView)
         addSubview(GIFTitleLabel)
+        
+        configureImageView()
+        setImageViewConstraints()
+        setTitleLabelConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -41,6 +46,12 @@ class GIFCell: UITableViewCell {
         GIFImageView.clipsToBounds      = true
     }
     
+    func setCell(data: DataModel ) {
+        self.cellData = data
+        downloadGIF()
+        GIFTitleLabel.text = data.title
+    }
+    
     func setImageViewConstraints() {
         let padding: CGFloat = 10
         GIFImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,5 +74,4 @@ class GIFCell: UITableViewCell {
             GIFTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding)
         ])
     }
-    
 }

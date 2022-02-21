@@ -22,7 +22,7 @@
 		07F978A327C04E7B004D22E7 /* GIFCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F978A227C04E7B004D22E7 /* GIFCell.swift */; };
 		07F978A627C0501F004D22E7 /* DITitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F978A527C0501F004D22E7 /* DITitleLabel.swift */; };
 		07F978A827C05045004D22E7 /* DISecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F978A727C05045004D22E7 /* DISecondaryTitleLabel.swift */; };
-		07F978AA27C095FC004D22E7 /* DIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F978A927C095FC004D22E7 /* DIViewModel.swift */; };
+		07F978AC27C3F2D9004D22E7 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F978AB27C3F2D9004D22E7 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		07F978A227C04E7B004D22E7 /* GIFCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFCell.swift; sourceTree = "<group>"; };
 		07F978A527C0501F004D22E7 /* DITitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DITitleLabel.swift; sourceTree = "<group>"; };
 		07F978A727C05045004D22E7 /* DISecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DISecondaryTitleLabel.swift; sourceTree = "<group>"; };
-		07F978A927C095FC004D22E7 /* DIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIViewModel.swift; sourceTree = "<group>"; };
+		07F978AB27C3F2D9004D22E7 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,6 @@
 		07F9785927BFE616004D22E7 /* Dependency Injection App */ = {
 			isa = PBXGroup;
 			children = (
-				07F978A927C095FC004D22E7 /* DIViewModel.swift */,
 				07F978A427C04FF2004D22E7 /* Labels */,
 				07F978A127C04D45004D22E7 /* Cells */,
 				07F9789E27C04BF4004D22E7 /* View Controllers */,
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				07F9786F27BFE78F004D22E7 /* DataModel.swift */,
+				07F978AB27C3F2D9004D22E7 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,8 +343,8 @@
 				07F9789D27C02EAB004D22E7 /* NetworkManager.swift in Sources */,
 				07F9787027BFE78F004D22E7 /* DataModel.swift in Sources */,
 				07F978A827C05045004D22E7 /* DISecondaryTitleLabel.swift in Sources */,
-				07F978AA27C095FC004D22E7 /* DIViewModel.swift in Sources */,
 				07F978A327C04E7B004D22E7 /* GIFCell.swift in Sources */,
+				07F978AC27C3F2D9004D22E7 /* Response.swift in Sources */,
 				07F9789A27C019E4004D22E7 /* ErrorMessage.swift in Sources */,
 				07F978A627C0501F004D22E7 /* DITitleLabel.swift in Sources */,
 				07F978A027C04C3C004D22E7 /* MainViewController.swift in Sources */,

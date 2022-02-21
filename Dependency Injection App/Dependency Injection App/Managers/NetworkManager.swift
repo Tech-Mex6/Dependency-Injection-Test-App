@@ -15,7 +15,7 @@ class NetworkManager {
     private init() {}
     
     
-    func fetchTrendingData(rating: String, Completed: @escaping(Result<[DataModel], DIError>) -> Void) {
+    func fetchTrendingData(rating: String, Completed: @escaping(Result<Response, DIError>) -> Void) {
         let endpoint = "https://api.giphy.com/v1/gifs/trending?" + "api_key=\(apiKey)&limit=25" + "&rating=\(rating)"
         guard let url = URL(string: endpoint) else {
             Completed(.failure(.invalidData))
@@ -40,7 +40,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let trendingResponse = try decoder.decode([DataModel].self, from: data)
+                let trendingResponse = try decoder.decode(Response.self, from: data)
                 Completed(.success(trendingResponse))
             } catch {
                 Completed(.failure(.invalidData))
@@ -49,7 +49,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func fetchSearchData(query: String, Completed: @escaping(Result<[DataModel], DIError>) -> Void) {
+    func fetchSearchData(query: String, Completed: @escaping(Result<Response, DIError>) -> Void) {
         let endpoint = "https://api.giphy.com/v1/gifs/search?" + "api_key=\(apiKey)" + "&q=\(query)" + "&limit=25&offset=0&rating=pg&lang=en"
         guard let url = URL(string: endpoint) else {
             Completed(.failure(.unableToComplete))
@@ -75,7 +75,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let searchResponse = try decoder.decode([DataModel].self, from: data)
+                let searchResponse = try decoder.decode(Response.self, from: data)
                 Completed(.success(searchResponse))
             } catch {
                 Completed(.failure(.invalidData))
@@ -84,7 +84,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func fetchDataByID(ID: String, completed: @escaping(Result<[DataModel],DIError>) -> Void) {
+    func fetchDataByID(ID: String, completed: @escaping(Result<Response,DIError>) -> Void) {
         let endpoint = "https://api.giphy.com/v1/gifs/" + "\(ID)?" + "api_key=\(apiKey)"
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidResponse))
@@ -109,7 +109,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let dataByID = try decoder.decode([DataModel].self, from: data)
+                let dataByID = try decoder.decode(Response.self, from: data)
                 completed(.success(dataByID))
             } catch {
                 completed(.failure(.invalidData))
